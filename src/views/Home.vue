@@ -45,8 +45,8 @@
         <h1>Product Category</h1>
         <p>Browse the collection of our new products.</p>
         <div class="flex items-center gap-10">
-          <div class="productTab" v-for="product in products" :key="product">
-          <img :src="product.image" alt=""> {{ product.title }}
+          <div class="productTab" v-for="product in fewProducts" :key="product.id">
+          <img :src="product.image_link" alt=""> {{ product.name }}
         </div>
         </div>
       </div>
@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Header from '../components/Header.vue'
 
 export default {
@@ -65,12 +66,29 @@ export default {
 
   data () {
     return {
-      products : [
-       { title : 'Fairness cream', price : '$500', image : 'https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'},
-       { title : 'Beauty Cream', price : '$409',},
-       { title : 'Shorts|Skirts', price : '$376', }
-      ]
+      products: [],
     }
+  }, 
+
+  beforeMount() {
+    axios
+      .get('http://makeup-api.herokuapp.com/api/v1/products.json')
+      .then(response => {
+          this.products = response.data
+          console.log(this.products)
+      })
+      .catch(error => console.log(error))
+  },
+
+  computed: {
+    fewProducts () {
+      this.products.slice(1, 3)
+      return goat console.log(goat)
+    }
+  },
+
+  methods: {
+   
   }
 }
 </script>
