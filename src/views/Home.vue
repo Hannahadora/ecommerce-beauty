@@ -2,7 +2,7 @@
   <div class="home">
       <Header />
 
-      <div class="bg-red-200" style="">
+      <div class="border" style="heigth:400px;">
          <div class="flex items-center justify-between">
            <div  class="ml-24 w-1/3 text-center font-serif text-gray-500">
              <h1 class="font-medium text-5xl">
@@ -13,7 +13,7 @@
              </p>
              <button class="px-5 py-1 rounded border border-gray-700 hover:bg-gray-500 hover:text-white hover:border-0">Shop Now</button>
            </div>
-           <img class="" src="../assets/images/mdintro.png" alt="" >
+           <img class="" src="" alt="" >
          </div>
       </div>
 
@@ -25,22 +25,32 @@
           <p>On all order over $100.00</p>
         </div>
         <div class="mini-shadowbox">
-          <i class=""></i>
+          <i class="fas fa-undo text-3xl"></i>
           <p>Free Exchanges</p>
           <p>Incase of Issues</p>
         </div>
         <div class="mini-shadowbox">
-          <i class=""></i>
+          <i class="fas fa-certificate text-3xl"></i>
           <p>Source Payment</p>
           <p>Source Payment</p>
         </div>
         <div class="mini-shadowbox">
-          <i class=""></i>
+          <i class="fas fa-headset text-3xl"></i>
           <p>24/7 Extensive</p>
           <p>Customer Support</p>
         </div>
+      </div>
+
+      <div class="productsCat">
+        <h1>Product Category</h1>
+        <p>Browse the collection of our new products.</p>
+        <div class="flex items-center gap-10">
+          <div class="productTab" v-for="product in products" :key="product">
+          <img :src="product.image" alt=""> {{ product.title }}
+        </div>
         </div>
       </div>
+    </div>
   </div>
 </template>
 
@@ -51,6 +61,16 @@ export default {
   name: 'Home',
   components: {
     Header
+  },
+
+  data () {
+    return {
+      products : [
+       { title : 'Fairness cream', price : '$500', image : 'https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'},
+       { title : 'Beauty Cream', price : '$409',},
+       { title : 'Shorts|Skirts', price : '$376', }
+      ]
+    }
   }
 }
 </script>
