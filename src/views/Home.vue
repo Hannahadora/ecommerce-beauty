@@ -2,7 +2,7 @@
   <div class="home">
       <Header />
 
-      <div class="border" style="heigth:400px;">
+      <div class="bg-red-200" style="height :600px;">
          <div class="flex items-center justify-between">
            <div  class="ml-24 w-1/3 text-center font-serif text-gray-500">
              <h1 class="font-medium text-5xl">
@@ -55,7 +55,7 @@
 
       <div class="flex-section">
         <div class="w-1/3 flex items-end">
-          <img src="https://images.pexels.com/photos/4672616/pexels-photo-4672616.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+          <img class="" style="height:500px; width:400px" src="https://images.pexels.com/photos/4672616/pexels-photo-4672616.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
           <img class="-ml-48 -mb-20 w-72 h-72" src="https://images.pexels.com/photos/4672654/pexels-photo-4672654.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
         </div>
         <div class="w-1/2">
@@ -85,11 +85,7 @@
               <p>{{ product.name }}</p>
               <p>{{ product.price_sign }}{{ product.price }}</p>
               <div>
-                <i class="fas fa-star text-red-300"></i>
-                <i class="fas fa-star text-red-300"></i>
-                <i class="fas fa-star text-red-300"></i>
-                <i class="fas fa-star text-red-300"></i>
-                <i class="fas fa-star text-red-300"></i>
+                <Ratings />
               </div>
             </div>
           </div>
@@ -97,22 +93,106 @@
       </div>
 
 
-      <div class="" style="height:500px; background-image: url('https://images.pexels.com/photos/3020129/pexels-photo-3020129.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');">
-
+      <div class="my-20 py-20 bg-no-repeat bg-cover bg-center" style="height:600px; background-image: url('https://images.pexels.com/photos/3020129/pexels-photo-3020129.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
+          <div class="mx-auto w-8/12 py-10 px-40 bg-white bg-opacity-70">
+              <div class="text-center">   
+                <h1>GET THE BEST IN</h1>
+                <h2>Get 70% Off In This Summer</h2>
+            </div>
+          </div>
       </div>
 
 
+      <div class="wedge">
+        <div class="productsCat">
+          <div class="row-section">
+            <div>   
+              <h1>Latest Collections</h1>
+              <p>Browse the collection of our new products.</p>
+            </div>
+            <div class="row-section">
+              <i class="fas fa-arrow-left"></i>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-10">
+            <div v-for="product in products.slice(20, 25)" :key="product.id">
+              <img class="productTab" :src="product.image_link" alt=""> 
+              <p>{{ product.name }}</p>
+              <p>{{ product.price_sign }}{{ product.price }}</p>
+              <div>
+                <Ratings />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-section">
+        <h1>What People Say</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nisi.</p>
+        <div class="mt-5 row-section">
+          <i class="fas fa-arrow-left"></i>
+          <p class="w-1/2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore animi et nam, eveniet itaque architecto quibusdam nulla tempora similique repellendus cum repudiandae delectus ipsam, officia maiores voluptatibus ad sint nobis optio, rerum distinctio quod ex.</p>
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="my-10">
+          <Ratings />
+        </div>
+        <div class="flex items-center justify-center gap-10">
+          <img class="w-20 h-20 rounded-full" src="https://images.pexels.com/photos/3785424/pexels-photo-3785424.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+         <div class="flex flex-col items-center">
+            <img class="w-20 h-20 rounded-full" src="https://images.pexels.com/photos/3763152/pexels-photo-3763152.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+            <h3>Anna Adora</h3>
+            <p>Software Engineer</p>
+         </div>
+          <img class="w-20 h-20 rounded-full" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        </div>
+      </div>
+
+      <div class="wedge">
+        <div class="home-blog">
+          <div>
+            <h1 class="my-7">Blog Update</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, illo.</p>
+          </div>
+          <div class="my-10 grid grid-cols-3 gap-10">
+            <div class="flex flex-col gap-5">
+              <img src="https://images.pexels.com/photos/2564890/pexels-photo-2564890.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+              <p>00/00/00</p>
+              <h3>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</h3>
+            </div>
+            <div class="flex flex-col gap-5">
+              <img src="https://images.pexels.com/photos/4672666/pexels-photo-4672666.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+              <p>00/00/00</p>
+              <h3>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</h3>
+            </div>
+            <div class="flex flex-col gap-5">
+              <img src="https://images.pexels.com/photos/6417941/pexels-photo-6417941.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+              <p>00/00/00</p>
+              <h3>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
+import Ratings from '../components/Ratings.vue'
 
 export default {
   name: 'Home',
   components: {
-    Header
+    Header,
+    Footer,
+    Ratings,
   },
 
   data () {
@@ -140,4 +220,19 @@ export default {
   }
 }
 </script>
+
+
+<style scoped>
+  h2 {
+    color: rgb(231, 52, 52);
+    font-size: 70px;
+    font-family: 'avenir';
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+
+  }
+</style>
 
