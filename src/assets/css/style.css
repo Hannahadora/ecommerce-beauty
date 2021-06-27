@@ -1,6 +1,6 @@
 body {
     font-family: 'Avenir Next';
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: #444444;
 }
@@ -44,4 +44,21 @@ h1 {
     width: 300px;
     height: 400px;
     padding: 10px;
+}
+
+.flex-section {
+    background-color: #fae2c3;
+    padding: 160px 200px;
+    margin: 80px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
