@@ -24,7 +24,7 @@ export default {
     
 <style>
     .nav-content {
-        font-size: 14px;
+        font-size: 16px;
         display: flex;
         flex-direction: row;
         align-items: center;

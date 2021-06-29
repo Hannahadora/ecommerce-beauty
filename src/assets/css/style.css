@@ -75,6 +75,23 @@ h1 {
     margin: 20px auto;
 }
 
+.home-cover {
+    background-image: url('https://images.pexels.com/photos/5625041/pexels-photo-5625041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    padding: 150px 0;
+}
+
+.cover-text {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    padding: 40px 160px;
+    border-radius: 4px;
+}
+
 #footer {
     margin-top: 100px;
     background-color: #444444;
@@ -87,4 +104,12 @@ h1 {
     flex-direction: row;
     align-items: start;
     justify-content: space-between;
+}
+
+.arrows {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: coral;
+    color: white;
+    cursor: pointer;
 }
