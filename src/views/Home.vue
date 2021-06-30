@@ -81,7 +81,7 @@
             </div>
           </div>
           <div class="grid grid-cols-3 gap-10">
-            <div v-for="product in products.slice(product.index, product.index + 3)" :key="product.id">
+            <div v-for="product in products.slice(14,17)" :key="product.id">
               <img class="productTab" :src="product.image_link" alt=""> 
               <p>{{ product.name }}</p>
               <p>{{ product.price_sign }}{{ product.price }}</p>
@@ -132,22 +132,23 @@
       <div class="reviews-section">
         <h1>What People Say</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nisi.</p>
+
         <div class="mt-5 row-section">
           <i class="arrows fas fa-arrow-left"></i>
-          <p class="w-1/2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore animi et nam, eveniet itaque architecto quibusdam nulla tempora similique repellendus cum repudiandae delectus ipsam, officia maiores voluptatibus ad sint nobis optio, rerum distinctio quod ex.</p>
+
+          <div v-for="customer in customers" :key="Customer.id" class="my-10">
+            <div>
+              <p class="w-1/2">{{ customer.review }}</p>
+              <Ratings />
+            </div>
+            <div class="flex flex-col items-center">
+                <img class="w-20 h-20 rounded-full" :src="customer.image" alt="">
+                <h3>{{ customer.name }}</h3>
+                <p>{{ customer.occupation }}</p>
+            </div>
+          </div>
+
           <i class="arrows fas fa-arrow-right"></i>
-        </div>
-        <div class="my-10">
-          <Ratings />
-        </div>
-        <div class="flex items-center justify-center gap-10">
-          <img class="w-20 h-20 rounded-full" src="https://images.pexels.com/photos/3785424/pexels-photo-3785424.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-         <div class="flex flex-col items-center">
-            <img class="w-20 h-20 rounded-full" src="https://images.pexels.com/photos/3763152/pexels-photo-3763152.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-            <h3>Anna Adora</h3>
-            <p>Software Engineer</p>
-         </div>
-          <img class="w-20 h-20 rounded-full" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
         </div>
       </div>
 
@@ -211,7 +212,8 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['products'])
+    ...mapGetters(['products']),
+   
    
   },
 
