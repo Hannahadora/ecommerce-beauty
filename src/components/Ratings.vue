@@ -1,10 +1,10 @@
 <template>
   <div id="rating">
-    <i class="fas fa-star text-red-300"></i>
-    <i class="fas fa-star text-red-300"></i>
-    <i class="fas fa-star text-red-300"></i>
-    <i class="fas fa-star text-red-300"></i>
-    <i class="fas fa-star"></i>
+    <i class="fas fa-star text-red-300 text-sm"></i>
+    <i class="fas fa-star text-red-300 text-sm"></i>
+    <i class="fas fa-star text-red-300 text-sm"></i>
+    <i class="fas fa-star text-red-300 text-sm"></i>
+    <i class="fas fa-star text-sm"></i>
 </div>
 </template>
 

@@ -10,12 +10,12 @@
           <p class="text-white my-10 text-2xl">
             All shades of beautiful...
           </p>
-          <Button />
+           <ShopButton />
         </div>
       </div>
 
       <div class="wedge">
-        <div class="my-20 w-8/12 mx-auto flex items-center justify-between">
+        <div class="my-20 w-10/12 mx-auto flex items-center justify-between">
           <div class="mini-shadowbox">
             <i class="fas fa-truck text-3xl"></i>
             <h3>Free & Fast Delivery</h3>
@@ -42,7 +42,7 @@
           <h1>Product Category</h1>
           <p>Browse the collection of our new products.</p>
           <div class="flex items-center gap-10">
-            <div v-for="product in products.slice(21,24)" :key="product.id">
+            <div v-for="product in products.slice(71,74)" :key="product.id">
               <img class="productTab" :src="product.image_link" alt=""> {{ product.name }}
             </div>
           </div>
@@ -59,7 +59,7 @@
           <h1>Feel The Rich Cosmetic Experience!</h1>
           <p>A simplified ritual of powerful oxidant and naturally uplifting Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem optio illum magnam repudiandae vitae, hic animi nostrum officia voluptates eveniet natus quibusdam vero, veniam voluptas maxime maiores architecto error! <br/>
           <br/> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non quibusdam deleniti magni excepturi animi dicta porro culpa commodi quo ad.</p>
-          <Button />
+           <ShopButton class="mt-5" />
         </div>
       </div>
 
@@ -71,23 +71,14 @@
               <h1>New Products</h1>
               <p>Browse the collection of our new products.</p>
             </div>
-            <div class="row-section gap-10">
-              <div @click="prevSlide">
-                <i class="arrows fas fa-arrow-left"></i>
-              </div>
-              <div @click="nextSlide">
-                <i class="arrows fas fa-arrow-right"></i>
-              </div>
-            </div>
+             <MoreButton />
           </div>
           <div class="grid grid-cols-3 gap-10">
-            <div v-for="product in products.slice(14,17)" :key="product.id">
+            <div v-for="product in products.slice(64,67)" :key="product.id">
               <img class="productTab" :src="product.image_link" alt=""> 
               <p>{{ product.name }}</p>
               <p>{{ product.price_sign }}{{ product.price }}</p>
-              <div>
-                <Ratings />
-              </div>
+              <Ratings />
             </div>
           </div>
         </div>
@@ -99,6 +90,7 @@
               <div class="text-center">   
                 <h3>GET THE BEST IN</h3>
                 <h2>Get 70% Off In This Summer</h2>
+                <ShopButton class="mt-5" />
             </div>
           </div>
       </div>
@@ -111,53 +103,31 @@
               <h1>Latest Collections</h1>
               <p>Browse the collection of our new products.</p>
             </div>
-            <div class="row-section gap-10">
-              <i class="arrows fas fa-arrow-left"></i>
-              <i class="arrows fas fa-arrow-right"></i>
-            </div>
+            <MoreButton />
           </div>
-          <div class="grid grid-cols-3 gap-10">
-            <div v-for="product in products.slice(30,36)" :key="product.id">
+          <div class="grid grid-cols-3">
+             <div v-for="product in products.slice(50,56)" :key="product.id">
               <img class="productTab" :src="product.image_link" alt=""> 
               <p>{{ product.name }}</p>
               <p>{{ product.price_sign }}{{ product.price }}</p>
-              <div>
-                <Ratings />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reviews-section">
-        <h1>What People Say</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nisi.</p>
-
-        <div class="mt-5 row-section">
-          <i class="arrows fas fa-arrow-left"></i>
-
-          <div v-for="customer in customers" :key="Customer.id" class="my-10">
-            <div>
-              <p class="w-1/2">{{ customer.review }}</p>
               <Ratings />
             </div>
-            <div class="flex flex-col items-center">
-                <img class="w-20 h-20 rounded-full" :src="customer.image" alt="">
-                <h3>{{ customer.name }}</h3>
-                <p>{{ customer.occupation }}</p>
-            </div>
           </div>
-
-          <i class="arrows fas fa-arrow-right"></i>
+         
         </div>
       </div>
+
+      <Reviews />
 
       <div class="wedge">
         <div class="home-blog">
-          <div>
-            <h1 class="my-7">Blog Update</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, illo.</p>
+          <div class="row-section">
+            <div>
+              <h1 class="my-7">Blog Update</h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, illo.</p>
+            </div>
+              <MoreButton />
           </div>
           <div class="my-10 grid grid-cols-3 gap-10">
             <div class="flex flex-col gap-5">
@@ -184,26 +154,38 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import Ratings from '../components/Ratings.vue'
-import Button from '../components/Button.vue'
+import ShopButton from '../components/Buttons/ShopButton.vue'
+import MoreButton from '../components/Buttons/MoreButton.vue'
+import Reviews from '../components/Reviews.vue'
+
+import { Hooper, Slide,  Navigation as HooperNavigation } from 'hooper'
+import 'hooper/dist/hooper.css'
 
 import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'Home',
+  props: [
+    
+  ],
   components: {
+    Hooper,
+    Slide,
+    HooperNavigation,
     Header,
     Footer,
     Ratings,
-    Button,
+    ShopButton,
+    MoreButton,
+    Reviews,
   },
 
   data () {
     return {
-     product_slide: 0,
+      
     }
   }, 
 
@@ -214,16 +196,10 @@ export default {
   computed: {
     ...mapGetters(['products']),
    
-   
   },
 
   methods: {
-    nextSlide(){
-      this.product_slide++;
-    },
-    prevSlide(){
-      this.product_slide--;
-    }
+  
   }
 }
 </script>
@@ -241,5 +217,6 @@ export default {
     font-weight: 700;
     font-family: 'avenir';
   }
+
 </style>
 
