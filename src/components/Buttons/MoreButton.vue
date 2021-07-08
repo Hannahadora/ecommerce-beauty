@@ -1,6 +1,6 @@
 <template>
   <div>
-      <button :class="{ primary: theme === 'primary' }">
+      <button class="focus:outline-none" :class="{ primary: theme === 'primary' }">
          See More
       </button>
   </div>
@@ -28,8 +28,8 @@ export default {
     button {
         border: 1px solid coral;
         border-radius: 4px;
-        font-size: 20px;
-        padding: 10px 30px;
+        font-size: 14px;
+        padding: 9px 28px;
         color: coral;
         /* font-weight: 700; */
     }

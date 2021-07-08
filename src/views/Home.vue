@@ -2,9 +2,9 @@
   <div class="home">
       <Header />
 
-      <div class="home-cover" style="height :600px;">
+      <div class="home-cover" style="height :400px;">
         <div  class="cover-text font-serif bg-black bg-opacity-50">
-          <h1 class="font-medium text-5xl">
+          <h1 class="font-medium text-3xl">
             Beauty without Measure
           </h1>
           <p class="text-white my-10 text-2xl">
@@ -15,26 +15,26 @@
       </div>
 
       <div class="wedge">
-        <div class="my-20 w-10/12 mx-auto flex items-center justify-between">
+        <div class="mb-20 mt-10 w-10/12 mx-auto flex items-center justify-between">
           <div class="mini-shadowbox">
-            <i class="fas fa-truck text-3xl"></i>
+            <i class="fas fa-truck text-2xl"></i>
             <h3>Free & Fast Delivery</h3>
-            <p>On all order over $100.00</p>
+            <p class="text-sm">On all order over $100.00</p>
           </div>
           <div class="mini-shadowbox">
-            <i class="fas fa-undo text-3xl"></i>
+            <i class="fas fa-undo text-2xl"></i>
             <h3>Free Exchanges</h3>
-            <p>Incase of Issues</p>
+            <p class="text-sm">Incase of Issues</p>
           </div>
           <div class="mini-shadowbox">
-            <i class="fas fa-certificate text-3xl"></i>
+            <i class="fas fa-certificate text-2xl"></i>
             <h3>Source Payment</h3>
-            <p>Source Payment</p>
+            <p class="text-sm">Source Payment</p>
           </div>
           <div class="mini-shadowbox">
-            <i class="fas fa-headset text-3xl"></i>
+            <i class="fas fa-headset text-2xl"></i>
             <h3>24/7 Extensive</h3>
-            <p>Customer Support</p>
+            <p class="text-sm">Customer Support</p>
           </div>
         </div>
 
@@ -43,7 +43,8 @@
           <p>Browse the collection of our new products.</p>
           <div class="flex items-center gap-10">
             <div v-for="product in products.slice(71,74)" :key="product.id">
-              <img class="productTab" :src="product.image_link" alt=""> {{ product.name }}
+              <img class="product-img" :src="product.image_link" alt="">
+              <span class="product-name">{{ product.name }}</span>
             </div>
           </div>
         </div>
@@ -75,9 +76,9 @@
           </div>
           <div class="grid grid-cols-3 gap-10">
             <div v-for="product in products.slice(64,67)" :key="product.id">
-              <img class="productTab" :src="product.image_link" alt=""> 
-              <p>{{ product.name }}</p>
-              <p>{{ product.price_sign }}{{ product.price }}</p>
+              <img class="product-img" :src="product.image_link" alt="">
+              <span class="product-name">{{ product.name }}</span>
+              <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
               <Ratings />
             </div>
           </div>
@@ -107,9 +108,9 @@
           </div>
           <div class="grid grid-cols-3">
              <div v-for="product in products.slice(50,56)" :key="product.id">
-              <img class="productTab" :src="product.image_link" alt=""> 
-              <p>{{ product.name }}</p>
-              <p>{{ product.price_sign }}{{ product.price }}</p>
+              <img class="product-img" :src="product.image_link" alt="">
+              <span class="product-name">{{ product.name }}</span>
+              <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
               <Ratings />
             </div>
           </div>
@@ -130,20 +131,20 @@
               <MoreButton />
           </div>
           <div class="my-10 grid grid-cols-3 gap-10">
-            <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-3">
               <img src="https://images.pexels.com/photos/2564890/pexels-photo-2564890.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-              <p>00/00/00</p>
-              <h3>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</h3>
+              <p class="text-xs not-italic">Denolla Witesyn-00/00/00</p>
+              <p>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</p>
             </div>
-            <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-3">
               <img src="https://images.pexels.com/photos/4672666/pexels-photo-4672666.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-              <p>00/00/00</p>
-              <h3>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</h3>
+              <p class="text-xs not-italic">Denolla Witesyn-00/00/00</p>
+              <p>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</p>
             </div>
-            <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-3">
               <img src="https://images.pexels.com/photos/6417941/pexels-photo-6417941.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-              <p>00/00/00</p>
-              <h3>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</h3>
+              <p class="text-xs not-italic">Denolla Witesyn-00/00/00</p>
+              <p>The adipisicing elit. Rem possimus inventore quod? Non, minus consectetur?</p>
             </div>
           </div>
         </div>
@@ -209,14 +210,15 @@ export default {
   h2 {
     color: rgb(231, 52, 52);
     font-size: 70px;
-    font-family: 'avenir';
+    font-family: 'montserrat';
   }
 
   h3 {
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'avenir';
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'montserrat';
   }
+  
 
 </style>
 

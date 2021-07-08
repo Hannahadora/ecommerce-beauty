@@ -13,7 +13,7 @@
        </div>
 
        <ul>
-         <h1 class="mb-7">INFORMATION</h1>
+         <p class="mb-5">INFORMATION</p>
           <li><a href="">Delivery Information</a></li>
           <li><a href="">Privacy Policy</a></li>
           <li><a href="">Terms & Conditions</a></li>
@@ -22,7 +22,7 @@
        </ul>
 
        <ul>
-         <h1 class="mb-7">SUPPORT</h1>
+         <p class="mb-5">SUPPORT</p>
           <li><a href="">Newsletter</a></li>
           <li><a href="">Community Guildelines</a></li>
           <li><a href="">Advertise Online</a></li>
@@ -31,7 +31,7 @@
        </ul>
 
        <ul>
-         <h1 class="mb-7">CONTACT</h1>
+         <p class="mb-5">CONTACT</p>
           <li><a href="">(00) 123 456 789</a></li>
           <li><a href="">info@yourmail.com</a></li>
           <li><a href="">www.yourwebsite.com</a></li>
@@ -53,8 +53,10 @@ export default {
 </script>
 
 <style scoped>
-  h1 {
-    font-size: 20px;
 
+
+  li {
+    font-size: 14px;
+    padding: 5px ;
   }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div>
-      <button :class="{ primary: theme === 'primary' }">
+      <router-link to="/shop"><button :class="{ primary: theme === 'primary' }">
          Shop Now
-      </button>
+      </button></router-link>
   </div>
 </template>
 
@@ -28,8 +28,8 @@ export default {
     button {
         background: coral;
         border-radius: 4px;
-        font-size: 20px;
-        padding: 10px 30px;
+        font-size: 16px;
+        padding: 9px 28px;
         color: white;
         /* font-weight: 700; */
     }

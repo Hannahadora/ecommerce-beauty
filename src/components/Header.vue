@@ -22,7 +22,7 @@ export default {
 <style>
     #header {
         background: white;
-        padding: 20px 100px;
+        padding: 10px 100px;
     }
    .header-content {
        display: flex;

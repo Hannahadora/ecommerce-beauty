@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import Ratings from './Ratings.vue'
+
 import { mapActions, mapGetters, mapState } from 'vuex';
 
 import { Hooper, Slide,  Navigation as HooperNavigation } from 'hooper'
@@ -27,6 +29,7 @@ import 'hooper/dist/hooper.css'
 export default {
     name: 'Reviews',
     components : {
+        Ratings,
         Hooper,
         Slide,
         HooperNavigation,
@@ -46,5 +49,10 @@ export default {
 </script>
 
 <style>
-
+  .reviews-section {
+    margin: 60px 0;
+    text-align: center;
+    padding: 80px 200px;
+    background-color: #fcfcfc;
+  }
 </style>

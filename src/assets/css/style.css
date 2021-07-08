@@ -4,16 +4,16 @@
 
 body {
     margin: 0;
-    font-family: 'Avenir Next';
-    font-size: 18px;
-    font-weight: 500;
-    color: #444444;
+    font-family: 'poppins';
+    font-size: 16px;
+    font-weight: 300;
+    color: #666666;
 }
 
 h1 {
-    font-size: 45px;
-    font-family: 'Avenir';
-    font-weight: 900;
+    font-size: 30px;
+    font-family: 'montserrat';
+    font-weight: 700;
 }
 
 
@@ -46,8 +46,8 @@ h1 {
     margin-top: 50px;
     /* background-color: #c4c4c4; */
     border-radius: 4px;
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
     padding: 10px;
 }
 
@@ -68,13 +68,6 @@ h1 {
     justify-content: space-between;
 }
 
-.reviews-section {
-    margin: 60px 0;
-    text-align: center;
-    padding: 80px 200px;
-    background-color: #fcfcfc;
-}
-
 .home-blog {
     width: 90%;
     margin: 20px auto;
@@ -85,7 +78,7 @@ h1 {
     background-repeat: none;
     background-position: center;
     background-size: cover;
-    padding: 150px 0;
+    padding: 80px 0;
 }
 
 .cover-text {
@@ -93,7 +86,7 @@ h1 {
     margin: auto;
     text-align: center;
     color: #fff;
-    padding: 40px 160px;
+    padding: 10px 160px;
     border-radius: 4px;
 }
 
@@ -112,9 +105,46 @@ h1 {
 }
 
 .arrows {
-    padding: 10px;
+    padding: 5px 10px;
+    font-size: 11px;
     border-radius: 50%;
-    background-color: coral;
-    color: white;
+    border: 1px solid coral;
     cursor: pointer;
 }
+
+.arrows:active {
+    background-color: coral;
+    color: #fff;
+}
+
+/* ************************PRODUCTS************* */
+.product-img {
+    height: 150px;
+}
+.product-name {
+    font-size: 13px;
+    text-align: center;
+}
+.product-price {
+    font-size: 13px;    
+    padding: 7px 13px;
+}
+
+
+
+
+/* *************SHOP STYLE************ */
+
+.shop-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.shop-cover {
+    height: 100px; 
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    background:url('https://images.pexels.com/photos/5632324/pexels-photo-5632324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+}
+
