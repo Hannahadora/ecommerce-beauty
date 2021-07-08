@@ -88,13 +88,13 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
-import Ratings from '../components/Ratings.vue'
-import MoreButton from '../components/Buttons/MoreButton.vue'
+import Header from '../../components/Header.vue'
+import Footer from '../../components/Footer.vue'
+import Ratings from '../../components/Ratings.vue'
+import MoreButton from '../../components/Buttons/MoreButton.vue'
 import { mapGetters } from 'vuex'
 export default {
-  name: 'Shop',
+  name: 'Index',
   components: { Footer, Header, Ratings, MoreButton, },
   data() {
     return {
