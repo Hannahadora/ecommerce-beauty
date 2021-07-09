@@ -11,7 +11,8 @@
         <form action="">
           <input type="text" placeholder="Search for products..." class="border-b focus:outline-none px-5 py-2 text-xs">
         </form>
-         <p>500 Items</p>
+        <p>{{ type.length }} {{ type }} Found</p>
+         <p>{{ products.length }} Items Available</p>
       </div>
 
       <div class="mt-10">
@@ -20,16 +21,17 @@
             <h4 class="">Product Category</h4>
 
             <ul>
-              <li class="product-type-list">Blush</li>
-              <li class="product-type-list">Bronzer</li>
-              <li class="product-type-list">Eyebrow</li>
-              <li class="product-type-list">EyeLiner</li>
-              <li class="product-type-list">Eye Shadow</li>
-              <li class="product-type-list">Foundation</li>
-              <li class="product-type-list">Lip LIner</li>
-              <li class="product-type-list">Lipstick</li>
-              <li class="product-type-list">Mascara</li>
-              <li class="product-type-list">Nail Polish</li>
+              <li :class="{active: type ===''}" @click="filterType('')" class="product-type-list">All</li>
+              <li :class="{active: type ==='blush'}" @click="filterType('blush')" class="product-type-list">Blush</li>
+              <li :class="{active: type ==='bronzer'}" @click="filterType('bronzer')" class="product-type-list">Bronzer</li>
+              <li :class="{active: type ==='eyebrow'}" @click="filterType('eyebrow')" class="product-type-list">Eyebrow</li>
+              <li :class="{active: type ==='eyeliner'}" @click="filterType('eyeliner')" class="product-type-list">EyeLiner</li>
+              <li :class="{active: type ==='eyeshadow'}" @click="filterType('eyeshadow')" class="product-type-list">Eye Shadow</li>
+              <li :class="{active: type ==='foundation'}" @click="filterType('foundation')" class="product-type-list">Foundation</li>
+              <li :class="{active: type ==='lipliner'}" @click="filterType('lipliner')" class="product-type-list">Lip LIner</li>
+              <li :class="{active: type ==='lipstick'}" @click="filterType('lipstick')" class="product-type-list">Lipstick</li>
+              <li :class="{active: type ==='mascara'}" @click="filterType('mascara')" class="product-type-list">Mascara</li>
+              <li :class="{active: type ==='nailpolish'}" @click="filterType('nailpolish')" class="product-type-list">Nail Polish</li>
             </ul>
 
             <div class="mt-10">
@@ -62,6 +64,7 @@
           </div>
 
           <div class="">
+            <router-view></router-view>
             <div class="grid grid-cols-3">
               <div v-for="product in displayedProducts" :key="product.id" class="product-group">
                 <img class="product-img" :src="product.image_link" alt="">
@@ -91,30 +94,64 @@
 import Header from '../../components/Header.vue'
 import Footer from '../../components/Footer.vue'
 import Ratings from '../../components/Ratings.vue'
-import MoreButton from '../../components/Buttons/MoreButton.vue'
 import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
-  components: { Footer, Header, Ratings, MoreButton, },
+  components: { Footer, Header, Ratings, },
   data() {
     return {
-      displayedProducts: []
+      // displayedProducts: [],
+      type: '',
     }
   },
 
    mounted() {
     this.$store.dispatch('getProducts')
-    this.sliceProducts(201)
+    // this.sliceProducts(201)
   },
 
   computed: {
-    ...mapGetters(['products'])
+    ...mapGetters(['products']),
+
+    displayedProducts() {
+      return this.products.filter(product => {
+          switch(this.type) {
+              case 'blush':
+                  return product.product_type === "blush";
+              case 'bronzer':
+                  return product.product_type === "bronzer";
+              case 'eyebrow':
+                  return product.product_type === "eyebrow";
+              case 'eyeliner':
+                  return product.product_type === "eyeliner";
+              case 'eyeshadow':
+                  return product.product_type === "eyeshadow";
+              case 'foundation':
+                  return product.product_type === "foundation";
+              case 'lipliner':
+                  return product.product_type === "lip_liner";
+              case 'lipstick':
+                  return product.product_type === "lipstick";
+              case 'mascara':
+                  return product.product_type === "mascara";
+              case 'nailpolish':
+                  return product.product_type === "nail_polish";
+              default:
+                  return  this.products.slice(201, 213);
+          }
+      });
+    }
   }, 
 
   methods: {
     sliceProducts(index) {
-      this.displayedProducts = this.products.slice(index, (index + 12))
-    }
+       this.products.slice(index, (index + 12))
+    },
+
+    filterType(type) {
+      this.type = type;
+    },
+
   },
 }
 </script>
@@ -136,21 +173,9 @@ h4 {
     color:coral;
   }
 
-  .product-group {
-    background: #fcfcfc;
-    /* border: 1px solid #ebebeb; */
-    margin: 10px ;
-    padding: 20px;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
+ 
   .studio-sample-img {
-    width: 100px;
+    width: 140px;
     height: 100px;
     margin: 5px;
   }
