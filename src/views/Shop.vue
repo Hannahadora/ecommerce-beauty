@@ -64,13 +64,14 @@
           </div>
 
           <div class="">
-            <router-view></router-view>
             <div class="grid grid-cols-3">
               <div v-for="product in displayedProducts" :key="product.id" class="product-group">
-                <img class="product-img" :src="product.image_link" alt="">
-                <span class="product-name">{{ product.name }}</span>
-                <Ratings />
-                <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
+               <router-link :to="{ name: 'ProductDdetails', params: { id: product.id }}">
+                  <img class="product-img" :src="product.image_link" alt="">
+                  <span class="product-name">{{ product.name }}</span>
+                  <Ratings />
+                  <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
+               </router-link>
               </div>
             </div>
             <div class="flex items-center justify-center gap-10">
@@ -91,9 +92,9 @@
 </template>
 
 <script>
-import Header from '../../components/Header.vue'
-import Footer from '../../components/Footer.vue'
-import Ratings from '../../components/Ratings.vue'
+import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
+import Ratings from '../components/Ratings.vue'
 import { mapGetters } from 'vuex'
 export default {
   name: 'Index',

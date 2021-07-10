@@ -1,11 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
-// SHOP COMPONENTS
-import Index from '../views/Shop/Index.vue'
-import ProductType from '../views/Shop/ProductType.vue'
-import Brand from '../views/Shop/Brand.vue'
+import Shop from '../views/Shop.vue'
+import ProductDetails from '../views/ProductDetails.vue'
 
 
 Vue.use(VueRouter)
@@ -19,19 +16,13 @@ const routes = [
   {
     path: '/shop',
     name: 'Shop',
-    component: Index,
-    children: [
-      {
-        path: 'product_type/:product_type',
-        name: 'Product_type',
-        component: ProductType
-      },
-      {
-        path: 'brand/:brand',
-        name: 'Brand',
-        component: Brand
-      },
-    ]
+    component: Shop,
+  },
+  {
+    path: '/Shop/:id/',
+    name: 'ProductDetails',
+    component: ProductDetails,
+    props: true
   },
   {
     path: '/about',
