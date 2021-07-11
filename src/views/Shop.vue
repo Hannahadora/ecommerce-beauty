@@ -66,7 +66,7 @@
           <div class="">
             <div class="grid grid-cols-3">
               <div v-for="product in displayedProducts" :key="product.id" class="product-group">
-               <router-link :to="{ name: 'ProductDdetails', params: { id: product.id }}">
+               <router-link :to="{ name: 'ProductDetails', params: { id: product.id }}">
                   <img class="product-img" :src="product.image_link" alt="">
                   <span class="product-name">{{ product.name }}</span>
                   <Ratings />

@@ -14,18 +14,23 @@ export default new Vuex.Store({
       {id: '3', name: 'Dimkpa Grace', occupation: 'Product Designer', image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', review: 'It is not just that i am Tempore animi et nam, eveniet itaque architecto quibusdam nulla tempora similique repellendus cum repudiandae delectus ipsam, officia maiores voluptatibus ad sint nobis optio, rerum distinctio quod ex.'},
       {id: '4', name: 'Purity Harry', occupation: 'Graphics Designer', image: 'https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', review: 'Considering the fact thet Tempore animi et nam, eveniet itaque architecto quibusdam nulla tempora similique repellendus cum repudiandae delectus ipsam, officia maiores voluptatibus ad sint nobis optio, rerum distinctio quod ex.'},
       {id: '5', name: 'Eve Lyn', occupation: 'Product Manager', image: 'https://images.pexels.com/photos/8365068/pexels-photo-8365068.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', review: 'I am a product of good and Tempore animi et nam, eveniet itaque architecto quibusdam nulla tempora similique repellendus cum repudiandae delectus ipsam, officia maiores voluptatibus ad sint nobis optio, rerum distinctio quod ex.'},
-    ]
+    ],
+
   },
 
   getters: {
     products: (state) => state.products,
-    customers: (state) => state.customers
+    customers: (state) => state.customers,
   },
 
   mutations: {
     SET_PRODUCTS (state, products) {
       state.products = products
     },
+    PRODUCT_DETAILS (state) {
+     state.products.find((p) => p.id == this,id)
+     return product
+    }   
   },
 
   actions: {
@@ -36,7 +41,8 @@ export default new Vuex.Store({
           console.log(response.data)
       })
       .catch(error => console.log(error))
-    }
+    },
+    
   },
 
   modules: {}

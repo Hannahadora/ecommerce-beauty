@@ -3,16 +3,16 @@
     <Header />
 
     <div class="shop-cover" style="">
-      
+    
     </div>
 
-      <div v-for="product in products" :key="product.id" class="">           
-        <img class="product-img" :src="product.image_link" alt="">
-        <span class="product-name">{{ product.name }}</span>
-        <Ratings />
-        <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>            
-      </div>
- 
+    <img class="product-img" :src="product.image_link" alt="">
+    <span class="product-name">{{ product.name }}</span>
+    <Ratings />
+    <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>            
+
+
+    <Footer />
   </div>
 </template>
 
@@ -21,14 +21,18 @@
   import Footer from '../components/Footer.vue'
   import Ratings from '../components/Ratings.vue'
 
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapMutations } from 'vuex'
 
   export default {
-    name: 'Index',
+    name: 'ProductDetails',
     components: { Footer, Header, Ratings, },
+    props: [
+      'id'
+    ],
     data() {
       return {
-        
+        id: this.$route.params.id,
+        product: {},
       }
     },
 
@@ -38,6 +42,7 @@
 
    computed: {
     ...mapGetters(['products']),
+    ...mapMutations(['PRODUCT_DETAILS'])
    },
 
    }
