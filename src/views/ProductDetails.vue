@@ -32,7 +32,6 @@
     data() {
       return {
         id: this.$route.params.id,
-        product: {},
       }
     },
 
@@ -41,11 +40,13 @@
    },
 
    computed: {
-    ...mapGetters(['products']),
-    ...mapMutations(['PRODUCT_DETAILS'])
-   },
+    ...mapGetters(['products']),  
+    product() {
+      return this.products.find((el) => el.id == this.id)
+    },
 
    }
+  }
 </script>
 
 <style>

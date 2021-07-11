@@ -97,7 +97,7 @@ import Footer from '../components/Footer.vue'
 import Ratings from '../components/Ratings.vue'
 import { mapGetters } from 'vuex'
 export default {
-  name: 'Index',
+  name: 'Shop',
   components: { Footer, Header, Ratings, },
   data() {
     return {

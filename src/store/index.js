@@ -26,11 +26,7 @@ export default new Vuex.Store({
   mutations: {
     SET_PRODUCTS (state, products) {
       state.products = products
-    },
-    PRODUCT_DETAILS (state) {
-     state.products.find((p) => p.id == this,id)
-     return product
-    }   
+    }, 
   },
 
   actions: {
