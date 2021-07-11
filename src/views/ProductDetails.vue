@@ -19,6 +19,10 @@
         </ul>  
         <p>{{ product.description }}</p>
         <p><i class="far fa-heart text-red-500 mr-3"></i>ADD TO WISHLIST</p>
+        <form action="">
+          <input type="number">
+          <input type="submit" value="Add To Cart">
+        </form>
       </div>     
     </div>
 
