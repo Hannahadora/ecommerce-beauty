@@ -7,32 +7,46 @@
     </div>
 
     <div class="product-detail">
-      <img class="" :src="product.image_link" alt="">
+      <img class="" :src="selectedProduct.image_link" alt="">
       <div class="product-info">
-        <p>{{ product.name }}</p> 
-        <p>{{ product.price_sign }}{{ product.price }}</p>  
+        <p>{{ selectedProduct.name }}</p> 
+        <p>{{ selectedProduct.price_sign }}{{ selectedProduct.price }}</p>  
         <Ratings />
         <ul>
           <li>In Stock</li>
           <li>Free Delivery Available</li>
           <li>Sales 25% Off Use Code: Anna2021</li>
         </ul>  
-        <p>{{ product.description }}</p>
+        <p>{{ selectedProduct.description }}</p>
         <p v-if="!wishListProduct"><i @click="wishListProduct = true" class="far fa-heart text-red-500 text-xl mr-2 cursor-pointer"></i>ADD TO WISHLIST</p>
         <p v-if="wishListProduct"><i @click="wishListProduct = false" class="fas fa-heart text-red-500 text-xl mr-2 cursor-pointer"></i>REMOVE FROM WISHLIST</p>
         <div class="addToCart" action="">
           <div class="amt">
-            <button class="focus:outline-none">-</button>
-            <span>{{ itemQuantity }}</span>
-            <button class="focus:outline-none">+</button>
+            <button @click="decreaseQuantity" class="focus:outline-none">-</button>
+            <span>{{ productQuantity }}</span>
+            <button @click="increaseQuantity" class="focus:outline-none">+</button>
           </div> 
           <button class="btn focus:outline-none">Add To Cart</button>
         </div>
-        <p>Category: {{ product.category }}</p>
-        <p>Brand: {{ product.brand }}</p>
+        <p>Category: {{ selectedProduct.category }}</p>
+        <p>Brand: {{ selectedProduct.brand }}</p>
         <p>Tags:</p>
-        <li v-for="tag in product.tag_list" :key="tag.index">{{ tag }}</li>
-      </div>     
+        <li v-for="tag in selectedProduct.tag_list" :key="tag.index">{{ tag }}</li>
+      </div>      
+    </div>
+
+    <div class="similarProducts">
+      <h1>Similar Products</h1>
+      <div class="grid grid-cols-4">
+        <div v-for="product in similarProducts" :key="product.id" class="product-group">
+          <router-link :to="{ name: 'ProductDetails', params: { id: product.id, name: product.name}}">
+            <img class="product-img" :src="product.image_link" alt="">
+            <span class="product-name">{{ product.name }}</span>
+            <Ratings />
+            <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
+          </router-link>
+        </div>
+      </div>
     </div>
 
     <Footer />
@@ -55,21 +69,29 @@
     data() {
       return {
         id: this.$route.params.id,
-        itemQuantity: '01',
+        productQuantity: '1',
         wishListProduct: false 
       }
     },
 
     mounted() {
      this.$store.dispatch('getProducts')
+     this.$store.state.selectedId = this.id
    },
 
    computed: {
-    ...mapGetters(['products']),  
-    product() {
-      return this.products.find((el) => el.id == this.id)
-    },
+    ...mapGetters(['products', 'selectedProduct', 'similarProducts']),  
+   
+   },
 
+   methods: {
+     decreaseQuantity() {
+       this.productQuantity--;
+
+     },
+     increaseQuantity(n) {
+        this.productQuantity++;
+     }
    }
   }
 </script>
@@ -77,7 +99,7 @@
 <style>
 
   .product-detail {
-    width: 60%;
+    width: 70%;
     margin: 50px auto;
     display: flex;
     align-items: flex-start;
@@ -145,6 +167,10 @@
     justify-content: space-between;
   }
 
-
+  .similarProducts {
+     background-color: #fff7ed;
+     padding: 50px 100px;
+     text-align: center;
+  }
  
 </style>

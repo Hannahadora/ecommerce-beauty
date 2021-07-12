@@ -43,8 +43,10 @@
           <p>Browse the collection of our new products.</p>
           <div class="flex items-center">
             <div class="product-group" v-for="product in products.slice(71,74)" :key="product.id">
-              <img class="product-img" :src="product.image_link" alt="">
-              <span class="product-name">{{ product.name }}</span>
+              <router-link :to="{ name: 'ProductDetails', params: { id: product.id, name: product.name}}">
+                <img class="product-img" :src="product.image_link" alt="">
+                <span class="product-name">{{ product.name }}</span>
+              </router-link>
             </div>
           </div>
         </div>
@@ -76,10 +78,12 @@
           </div>
           <div class="grid grid-cols-3">
             <div class="product-group" v-for="product in products.slice(64,67)" :key="product.id">
-              <img class="product-img" :src="product.image_link" alt="">
-              <span class="product-name">{{ product.name }}</span>
-              <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
-              <Ratings />
+              <router-link :to="{ name: 'ProductDetails', params: { id: product.id, name: product.name}}">
+                <img class="product-img" :src="product.image_link" alt="">
+                <span class="product-name">{{ product.name }}</span>
+                <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
+                <Ratings />
+              </router-link>
             </div>
           </div>
         </div>
@@ -108,10 +112,12 @@
           </div>
           <div class="grid grid-cols-3">
              <div class="product-group" v-for="product in products.slice(50,56)" :key="product.id">
-              <img class="product-img" :src="product.image_link" alt="">
-              <span class="product-name">{{ product.name }}</span>
-              <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
-              <Ratings />
+                <router-link :to="{ name: 'ProductDetails', params: { id: product.id, name: product.name}}">
+                  <img class="product-img" :src="product.image_link" alt="">
+                  <span class="product-name">{{ product.name }}</span>
+                  <p class="product-price">{{ product.price_sign }}{{ product.price }}</p>
+                  <Ratings />
+                </router-link>
             </div>
           </div>
          

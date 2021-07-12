@@ -15,12 +15,23 @@ export default new Vuex.Store({
       {id: '4', name: 'Purity Harry', occupation: 'Graphics Designer', image: 'https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', review: 'Considering the fact thet Tempore animi et nam, eveniet itaque architecto quibusdam nulla tempora similique repellendus cum repudiandae delectus ipsam, officia maiores voluptatibus ad sint nobis optio, rerum distinctio quod ex.'},
       {id: '5', name: 'Eve Lyn', occupation: 'Product Manager', image: 'https://images.pexels.com/photos/8365068/pexels-photo-8365068.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', review: 'I am a product of good and Tempore animi et nam, eveniet itaque architecto quibusdam nulla tempora similique repellendus cum repudiandae delectus ipsam, officia maiores voluptatibus ad sint nobis optio, rerum distinctio quod ex.'},
     ],
-
+    
+    selectedProductId: '',
   },
 
   getters: {
     products: (state) => state.products,
     customers: (state) => state.customers,
+    selectedProduct: state => {
+      return state.products.find(
+        product => product.id == state.selectedProductId
+      );
+    },
+    similarProducts: (state, getters) => {
+      return state.products.filter(product => {
+        product.product_type == getters.selectedProduct.product_type
+      })
+    }
   },
 
   mutations: {
