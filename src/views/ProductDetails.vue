@@ -26,7 +26,7 @@
             <span>{{ productQuantity }}</span>
             <button @click="increaseQuantity" class="focus:outline-none">+</button>
           </div> 
-          <button class="btn focus:outline-none">Add To Cart</button>
+          <button @click="addToCart" class="btn focus:outline-none">Add To Cart</button>
         </div>
         <p>Category: {{ selectedProduct.category }}</p>
         <p>Brand: {{ selectedProduct.brand }}</p>
@@ -38,7 +38,7 @@
     <div class="similarProducts">
       <h1>Similar Products</h1>
       <div class="grid grid-cols-4">
-        <div v-for="product in similarProducts" :key="product.id" class="product-group">
+        <div v-for="product in similarProducts.slice(0, 4)" :key="product.id" class="product-group">
           <router-link :to="{ name: 'ProductDetails', params: { id: product.id, name: product.name}}">
             <img class="product-img" :src="product.image_link" alt="">
             <span class="product-name">{{ product.name }}</span>
@@ -80,17 +80,21 @@
    },
 
    computed: {
-    ...mapGetters(['products', 'selectedProduct', 'similarProducts']),  
+    ...mapGetters(['products', 'selectedProduct', 'similarProducts', 'cartItems']),  
    
    },
 
    methods: {
      decreaseQuantity() {
        this.productQuantity--;
-
      },
      increaseQuantity(n) {
         this.productQuantity++;
+     },
+     addToCart() {
+        // this.$store.dispatch('addItem', this.selectedProduct)
+        this.$store.state.cart.push(this.selectedProduct)
+        this.$router.push({ name: 'Cart' })
      }
    }
   }

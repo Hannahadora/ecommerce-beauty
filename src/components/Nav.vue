@@ -9,7 +9,7 @@
       </div>
 
       <div class="nav-content nav-icons">
-          <router-link to="/cart"><i class="fas fa-shopping-cart"></i></router-link>
+          <router-link to="/cart"><i class="fas fa-shopping-cart"><span class="bg-blue-500 p-2 text-white">{{ cartLength }}</span></i></router-link>
           <router-link to="/search"><i class="fas fa-search"></i></router-link>
           <router-link to="/profile"><i class="fas fa-user"></i></router-link>
       </div>
@@ -17,8 +17,25 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-    name: 'Nav'
+    name: 'Nav',
+
+    data() {
+        return {
+            cartLength: '0'
+        }
+    },
+
+    mounted: {
+        ...mapGetters(['cartItems'])
+    },
+
+    computed: {
+       calcCartLength() {
+           this.cartLength = this.cartItems.length
+       }
+    }
 }
 </script>
     
