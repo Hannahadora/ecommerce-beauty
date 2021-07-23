@@ -7,5 +7,7 @@
 <style>
 
 #nav a.router-link-exact-active {
-  color: red}
+  color: #fd5f25;
+  border-bottom: #fd5f25;
+  }
 </style>

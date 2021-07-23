@@ -9,7 +9,7 @@
       </div>
 
       <div class="nav-content nav-icons">
-          <router-link to="/cart"><i class="fas fa-shopping-cart"><span class="bg-blue-500 p-2 text-white">{{ cartLength }}</span></i></router-link>
+          <router-link to="/cart"><i class="fas fa-shopping-cart"><span class="cart-block">{{ cartLength }}</span></i></router-link>
           <router-link to="/search"><i class="fas fa-search"></i></router-link>
           <router-link to="/profile"><i class="fas fa-user"></i></router-link>
       </div>
@@ -46,6 +46,11 @@ export default {
         flex-direction: row;
         align-items: center;
         gap: 20px;
+    }
+
+    .cart-block {
+        color: #fd5f25;
+        font-size: 16px;
     }
 
 </style>

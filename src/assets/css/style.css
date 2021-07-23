@@ -4,22 +4,52 @@
 
 body {
     margin: 0;
-    font-family: 'avenir next';
+    padding: 0;
+    color: #1d1d1d;
+}
+
+p {
+    font-family: montserrat;
     font-size: 16px;
-    font-weight: 500;
-    color: #666666;
 }
 
 h1 {
-    font-size: 30px;
-    font-family: 'montserrat';
+    font-size: 75px;
+    font-family: 'Sen', sans-serif;
     font-weight: 700;
 }
 
+h2 {
+    font-family: 'Sen', sans-serif;
+    font-size: 50px;
+    line-height: 45pt;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: 'Sen', sans-serif;
+    font-size: 25px;
+    line-height: 35pt;
+    font-weight: 700;
+}
+
+h4 {
+    font-family: 'Sen', sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+}
+
+h5 {
+    font-family: 'Sen', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
 
 .wedge {
-    width: 80%;
-    margin: 0 auto;
+    /* width: 80%; */
+    margin: 0 200px;
 }
 
 .active {
@@ -31,15 +61,15 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 20px;
+    padding: 17px;
     border-radius: 4px;
     /* border: 1px solid #c4c4c4; */
-    box-shadow: 0px 1px 5px #3F3F4419;
+    /* box-shadow: 0px 1px 5px rgb(0, 0, 0); */
 }
 
 .productsCat {
     width: 80%;
-    margin: 20px auto;
+    margin: 30px auto;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -56,8 +86,8 @@ h1 {
 }
 
 .flex-section {
-    background-color: #fff7ed;
-    padding: 100px 200px;
+    background-color: #fffbf8;
+    padding: 30px 200px;
     margin: 80px 0;
     display: flex;
     flex-direction: row;
@@ -73,25 +103,24 @@ h1 {
 }
 
 .home-blog {
-    width: 90%;
+    /* width: 90%; */
     margin: 20px auto;
 }
 
 .home-cover {
-    background-image: url('https://images.pexels.com/photos/5625041/pexels-photo-5625041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-    background-repeat: none;
-    background-position: center;
-    background-size: cover;
-    padding: 80px 0;
+    width: 100%;
+    padding: 0 0 0 200px;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 600px;
 }
 
 .cover-text {
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    color: #fff;
-    padding: 10px 160px;
-    border-radius: 4px;
+    width: 40%;
+    margin: auto 0;
+    /* padding: 10px 160px; */
 }
 
 #footer {
@@ -126,7 +155,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     cursor: pointer;
   }
 .product-img {

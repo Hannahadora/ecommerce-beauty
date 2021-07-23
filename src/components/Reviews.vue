@@ -1,13 +1,13 @@
 <template>
   <div class="reviews-section">
-        <h1>What People Say</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nisi.</p>
+        <h3>What People Say</h3>
+        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nisi.</h5>
 
         <hooper>
           <slide v-for="customer in customers" :key="customer" class="my-5">
              <div class="flex flex-col items-center">
                 <img class="w-20 h-20 rounded-full" :src="customer.image" alt="">
-                <h3>{{ customer.name }}</h3>
+                <h5>{{ customer.name }}</h5>
                 <p class="text-sm">{{ customer.occupation }}</p>
                 <Ratings />
                 <p class="w-1/2 mt-5">{{ customer.review }}</p>

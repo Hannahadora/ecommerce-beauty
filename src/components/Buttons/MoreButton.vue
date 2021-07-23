@@ -26,11 +26,11 @@ export default {
 
 <style scoped>
     button {
-        border: 1px solid coral;
+        border: 1px solid #c44e00;
         border-radius: 4px;
         font-size: 14px;
         padding: 9px 28px;
-        color: coral;
+        color: #c44e00;
         /* font-weight: 700; */
     }
 
@@ -39,7 +39,7 @@ export default {
     }
 
     button:hover {
-        background: coral;
+        background: #c44e00;
         color: #fff;
     }
 

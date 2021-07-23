@@ -94,7 +94,7 @@
      addToCart() {
         // this.$store.dispatch('addItem', this.selectedProduct)
         this.$store.state.cart.push(this.selectedProduct)
-        this.$router.push({ name: 'Cart' })
+        this.$router.push({ name: 'Cart' }) 
      }
    }
   }
