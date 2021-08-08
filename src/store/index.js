@@ -54,7 +54,7 @@ export default new Vuex.Store({
 
   actions: {
     getProducts ({ commit }) {
-      axios.get('http://makeup-api.herokuapp.com/api/v1/products.json')
+      axios.get('https://makeup-api.herokuapp.com/api/v1/products.json')
       .then(response => {
         commit('SET_PRODUCTS', response.data)
           console.log(response.data)
